@@ -20,7 +20,7 @@ waiting for the ~4.9 GB AI model to download.
 | **Node.js 20+** | JavaScript runtime + `npm` | Runs the Next.js web app |
 | **Ollama** | Local AI model runner | Runs the Llama model on your own machine |
 | **llama3.1:8b** | The AI model (~4.9 GB) | The actual intelligence behind the report |
-| **unipath-cpu** | A CPU-only build of that model | Avoids GPU-driver crashes on random laptops |
+| **unipath-cpu** | A CPU-only build of that model | Avoids GPU-driver crashes |
 | **npm packages** | The app's code dependencies | Downloaded automatically by `npm install` |
 
 You need an **internet connection for the first run only**. After everything is downloaded,
