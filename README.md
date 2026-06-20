@@ -49,12 +49,17 @@ ollama pull llama3.1:8b
 ```
 
 **5. Build the CPU-only model** (avoids GPU-driver crashes on random laptops)
+
+The recipe lives in a file called `Modelfile`, one folder up from this app (in the
+`Hackathon` folder). First, move into this app's folder, then build:
+
 ```powershell
-cd Hackathon\unipath-ai
+cd "C:\Users\reyna\OneDrive\Desktop\testing\Hackathon\unipath-ai"
 ollama create unipath-cpu -f ..\Modelfile
 ```
-> In cd command, instead of "Hackathon\unipath-ai", replace with the full address of the unipath-ai file location, along with the drive and everything else
 
+> If you copied this project somewhere else, change the `cd` path above to wherever the
+> `unipath-ai` folder actually is on this laptop.
 
 
 **6. Install the app and run it**
