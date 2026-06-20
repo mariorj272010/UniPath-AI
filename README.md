@@ -53,6 +53,9 @@ ollama pull llama3.1:8b
 cd Hackathon\unipath-ai
 ollama create unipath-cpu -f ..\Modelfile
 ```
+> In cd command, instead of "Hackathon\unipath-ai", replace with the full address of the unipath-ai file location, along with the drive and everything else
+
+
 
 **6. Install the app and run it**
 ```powershell
