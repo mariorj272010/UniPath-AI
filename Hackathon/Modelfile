@@ -1,0 +1,12 @@
+# CPU-only variant of llama3.1:8b.
+# num_gpu 0 = offload ZERO layers to the GPU, so the model always runs on CPU.
+# This sidesteps the "CUDA error: device kernel image is invalid" crash that
+# happens on machines with an outdated NVIDIA driver, regardless of which
+# Ollama server process handles the request.
+FROM llama3.1:8b
+PARAMETER num_gpu 0
+PARAMETER temperature 0.3
+# Room for the system prompt + the (compact) reference data + the JSON output.
+# The default (~4096) is too small once reference data is included; 8192 fits the
+# trimmed prompt comfortably while staying much faster on CPU than a larger window.
+PARAMETER num_ctx 8192

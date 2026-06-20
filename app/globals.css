@@ -1,0 +1,254 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ * MICRORITM — cinematic design system
+ * Warm obsidian void · molten ember key light · cool halo counter-light
+ * ------------------------------------------------------------------ */
+
+@theme {
+  /* Surfaces — warm volcanic-glass obsidian, never blue-black */
+  --color-void: oklch(0.13 0.012 64);
+  --color-void-deep: oklch(0.09 0.01 58);
+  --color-surface: oklch(0.175 0.014 66);
+  --color-surface-hi: oklch(0.225 0.016 68);
+
+  /* Ink */
+  --color-ink: oklch(0.965 0.006 80);
+  --color-ink-soft: oklch(0.78 0.012 76);
+  --color-ink-faint: oklch(0.66 0.012 72);
+
+  /* Light — molten amber key, cool halo counter-light */
+  --color-ember: oklch(0.82 0.125 72);
+  --color-ember-hi: oklch(0.88 0.13 80);
+  --color-ember-deep: oklch(0.62 0.13 56);
+  --color-halo: oklch(0.83 0.07 214);
+
+  --color-line: oklch(0.97 0.01 80 / 0.1);
+  --color-line-hi: oklch(0.97 0.01 80 / 0.2);
+
+  /* Cinematic ease curves */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+
+  /* Semantic z-scale */
+  --z-base: 0;
+  --z-scene: 10;
+  --z-content: 20;
+  --z-nav: 60;
+  --z-overlay: 80;
+}
+
+/* Map next/font variables to Tailwind font utilities without self-reference */
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+}
+
+:root {
+  --shell-x: 0;
+  --shell-y: 0;
+  color-scheme: dark;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-line);
+  }
+
+  html {
+    font-family: var(--font-sans), system-ui, sans-serif;
+    background: var(--color-void-deep);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background:
+      radial-gradient(120% 90% at 50% -10%, oklch(0.2 0.02 64) 0%, transparent 55%),
+      radial-gradient(80% 60% at 85% 110%, oklch(0.16 0.03 56) 0%, transparent 60%),
+      var(--color-void);
+    color: var(--color-ink);
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-ember);
+    color: var(--color-void-deep);
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display), var(--font-sans), sans-serif;
+    text-wrap: balance;
+    letter-spacing: -0.035em;
+    line-height: 0.94;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-void-deep);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-surface-hi);
+    border-radius: 99px;
+  }
+}
+
+@layer components {
+  /* Monumental display scale */
+  .display-xl {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 800;
+    font-size: clamp(3.2rem, 13vw, 9.5rem);
+    line-height: 0.86;
+    letter-spacing: -0.045em;
+  }
+  .display-lg {
+    font-family: var(--font-display), sans-serif;
+    font-weight: 700;
+    font-size: clamp(2.6rem, 8vw, 6rem);
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+  }
+
+  .hud-label {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--color-ink-faint);
+  }
+
+  /* Holographic glass — intentional, not a default card */
+  .glass {
+    background: linear-gradient(
+      155deg,
+      oklch(0.97 0.01 80 / 0.07),
+      oklch(0.97 0.01 80 / 0.02) 45%,
+      oklch(0.5 0.02 64 / 0.04)
+    );
+    border: 1px solid var(--color-line-hi);
+    backdrop-filter: blur(20px) saturate(1.3);
+    -webkit-backdrop-filter: blur(20px) saturate(1.3);
+    box-shadow:
+      inset 0 1px 0 oklch(1 0 0 / 0.14),
+      inset 0 0 40px oklch(0.97 0.01 80 / 0.03),
+      0 30px 80px -40px oklch(0.05 0.01 60 / 0.9);
+  }
+
+  .glass-edge {
+    position: relative;
+    isolation: isolate;
+  }
+  .glass-edge::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      150deg,
+      var(--color-ember-hi) 0%,
+      transparent 35%,
+      transparent 65%,
+      var(--color-halo) 100%
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .ember-glow {
+    box-shadow:
+      0 0 0 1px oklch(0.82 0.125 72 / 0.4),
+      0 8px 30px -8px oklch(0.82 0.125 72 / 0.5),
+      0 0 60px -12px oklch(0.82 0.125 72 / 0.45);
+  }
+
+  /* Fine grain to kill banding in the dark gradients */
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  }
+}
+
+/* Ambient motion ------------------------------------------------------ */
+@keyframes float-slow {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(0, -14px, 0); }
+}
+@keyframes drift {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  100% { transform: translate3d(0, -26px, 0) rotate(6deg); }
+}
+@keyframes ray-breathe {
+  0%, 100% { opacity: 0.35; transform: rotate(var(--ray-rot, 0deg)) scaleY(1); }
+  50% { opacity: 0.6; transform: rotate(var(--ray-rot, 0deg)) scaleY(1.08); }
+}
+@keyframes aurora-shift {
+  0%, 100% { transform: translate3d(-3%, 0, 0) scale(1.05); }
+  50% { transform: translate3d(3%, -2%, 0) scale(1.12); }
+}
+@keyframes sheen {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(220%); }
+}
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(900%); }
+}
+
+.anim-float { animation: float-slow 7s var(--ease-out-quint) infinite; }
+.anim-ray { animation: ray-breathe 9s ease-in-out infinite; }
+.anim-aurora { animation: aurora-shift 24s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Spline Suspense fallback spinner */
+.loader {
+  width: 42px;
+  height: 42px;
+  border: 3px solid oklch(0.82 0.125 72 / 0.2);
+  border-bottom-color: var(--color-ember);
+  border-radius: 50%;
+  display: inline-block;
+  animation: loader-rotation 1s linear infinite;
+}
+@keyframes loader-rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

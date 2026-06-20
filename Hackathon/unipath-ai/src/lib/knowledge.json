@@ -1,0 +1,163 @@
+{
+  "_note": "Illustrative reference data for grounding. Qualitative on purpose: no exact GPA cutoffs or acceptance rates, which change yearly. Students must verify specifics with official sources.",
+  "majors": [
+    {
+      "name": "Computer Science",
+      "about": "The study of computation, algorithms, software systems, and how to solve problems with code. Mixes math/logic with building real software.",
+      "core_topics": ["programming", "data structures & algorithms", "discrete math", "operating systems", "databases", "AI/ML basics"],
+      "skills_built": ["problem solving", "coding", "systems thinking", "abstraction"],
+      "common_careers": ["Software Engineer", "Data Scientist / ML Engineer", "Product Manager"]
+    },
+    {
+      "name": "Data Science",
+      "about": "Turning data into decisions using statistics, programming, and machine learning. Sits between CS, math, and a domain (business, science, etc.).",
+      "core_topics": ["statistics", "Python/R", "machine learning", "data visualization", "databases"],
+      "skills_built": ["statistical reasoning", "coding", "communicating insights"],
+      "common_careers": ["Data Scientist / ML Engineer", "Financial Analyst"]
+    },
+    {
+      "name": "Mechanical Engineering",
+      "about": "Designing and building physical machines and systems, from engines to robots. Heavy on physics and math applied to the real world.",
+      "core_topics": ["mechanics", "thermodynamics", "materials", "CAD", "control systems"],
+      "skills_built": ["analytical design", "hands-on prototyping", "physics intuition"],
+      "common_careers": ["Mechanical Engineer", "Product Manager"]
+    },
+    {
+      "name": "Business Administration",
+      "about": "How organizations are run: strategy, finance, marketing, operations, and people. Broad and flexible.",
+      "core_topics": ["accounting", "finance", "marketing", "management", "economics"],
+      "skills_built": ["decision making", "communication", "leadership", "analysis"],
+      "common_careers": ["Product Manager", "Financial Analyst"]
+    },
+    {
+      "name": "Biology (Pre-Med track)",
+      "about": "The science of living systems, often a stepping stone toward medicine or research. Lab-heavy and detail-oriented.",
+      "core_topics": ["cell biology", "genetics", "chemistry", "physiology", "statistics"],
+      "skills_built": ["scientific method", "lab technique", "evidence evaluation"],
+      "common_careers": ["Physician (Medicine)"]
+    },
+    {
+      "name": "Economics",
+      "about": "How people, firms, and societies allocate scarce resources. Blends social science with math and data.",
+      "core_topics": ["micro/macroeconomics", "econometrics", "statistics", "calculus"],
+      "skills_built": ["quantitative reasoning", "modeling incentives", "data analysis"],
+      "common_careers": ["Financial Analyst", "Data Scientist / ML Engineer"]
+    },
+    {
+      "name": "Psychology",
+      "about": "The science of mind and behavior, spanning clinical, cognitive, and research paths.",
+      "core_topics": ["research methods", "statistics", "cognition", "social psychology", "neuroscience basics"],
+      "skills_built": ["research design", "empathy + rigor", "interpreting studies"],
+      "common_careers": ["Clinical Psychologist / UX Researcher"]
+    }
+  ],
+  "careers": [
+    {
+      "name": "Software Engineer",
+      "field": "Technology",
+      "about": "Design, build, and maintain software products and systems.",
+      "pros": ["strong demand and pay", "remote-friendly", "build things people use"],
+      "cons": ["fast-changing skills (constant learning)", "can be sedentary/screen-heavy", "on-call/deadline pressure at some firms"],
+      "typical_background": ["CS, software, or self-taught coding", "portfolio of projects"],
+      "outlook": "Generally strong, though entry-level competition has risen; standout projects matter."
+    },
+    {
+      "name": "Data Scientist / ML Engineer",
+      "field": "Technology / Analytics",
+      "about": "Use data and machine learning to find patterns and build predictive systems.",
+      "pros": ["high impact + pay", "intellectually varied", "cross-industry demand"],
+      "cons": ["heavy math/stats", "lots of messy data cleaning", "expectations vary widely by company"],
+      "typical_background": ["CS, stats, data science, or math", "projects with real datasets"],
+      "outlook": "Strong, especially with solid statistics and engineering skills."
+    },
+    {
+      "name": "Mechanical Engineer",
+      "field": "Engineering",
+      "about": "Design physical products and systems across industries (auto, aerospace, robotics, energy).",
+      "pros": ["tangible, hands-on work", "broad industries", "stable profession"],
+      "cons": ["pay often below software", "some roles location-bound (factories/sites)", "slower iteration cycles"],
+      "typical_background": ["mechanical/related engineering degree", "CAD + project experience"],
+      "outlook": "Steady; robotics and clean energy are growth areas."
+    },
+    {
+      "name": "Product Manager",
+      "field": "Business / Tech",
+      "about": "Decide what a product should do and coordinate engineering, design, and business to ship it.",
+      "pros": ["high influence", "blends people + strategy + tech", "good pay"],
+      "cons": ["responsibility without direct authority", "many meetings", "rarely an entry-level role"],
+      "typical_background": ["often after engineering, design, or business experience"],
+      "outlook": "Competitive; usually reached after building experience elsewhere."
+    },
+    {
+      "name": "Physician (Medicine)",
+      "field": "Healthcare",
+      "about": "Diagnose and treat patients after extensive medical training.",
+      "pros": ["deep meaning + respect", "job security", "direct human impact"],
+      "cons": ["very long, expensive training", "high stress and long hours", "delayed earnings"],
+      "typical_background": ["strong science academics", "clinical/volunteer exposure", "medical school"],
+      "outlook": "Stable demand; path is long and demanding."
+    },
+    {
+      "name": "Financial Analyst",
+      "field": "Finance",
+      "about": "Analyze investments, company performance, and markets to guide money decisions.",
+      "pros": ["strong pay potential", "clear advancement", "transferable skills"],
+      "cons": ["long hours in some sectors (e.g., banking)", "high pressure", "cyclical with the economy"],
+      "typical_background": ["finance, economics, accounting, or math", "internships matter a lot"],
+      "outlook": "Solid; competitive at top firms."
+    },
+    {
+      "name": "Clinical Psychologist / UX Researcher",
+      "field": "Psychology applied",
+      "about": "Clinical: help people with mental health. UX research: study user behavior to improve products.",
+      "pros": ["human-centered and meaningful", "growing UX demand in tech", "varied settings"],
+      "cons": ["clinical path needs grad/licensure (long)", "emotionally demanding (clinical)", "UX roles competitive"],
+      "typical_background": ["psychology + research methods", "grad study for clinical work"],
+      "outlook": "Clinical: stable but credential-heavy. UX research: growing."
+    }
+  ],
+  "universities": [
+    {
+      "name": "Massachusetts Institute of Technology (MIT)",
+      "country": "USA",
+      "selectivity_tier": "Most selective",
+      "strong_areas": ["Computer Science", "Engineering", "Math/Science"],
+      "general_guidance": "Among the most selective in the world. Expects top-of-class academics, the hardest available course rigor, standout achievements/projects, and strong essays. Treat as a reach for almost everyone."
+    },
+    {
+      "name": "Stanford University",
+      "country": "USA",
+      "selectivity_tier": "Most selective",
+      "strong_areas": ["Computer Science", "Business", "Engineering", "Sciences"],
+      "general_guidance": "Extremely competitive. Looks for excellent academics plus distinctive impact and personal qualities. A reach for nearly all applicants."
+    },
+    {
+      "name": "University of Waterloo",
+      "country": "Canada",
+      "selectivity_tier": "Selective (very competitive for CS/Eng)",
+      "strong_areas": ["Computer Science", "Engineering", "Co-op programs"],
+      "general_guidance": "Renowned for co-op and CS/engineering; those programs are very competitive and emphasize math contest results and grades. Other programs are more attainable."
+    },
+    {
+      "name": "National University of Singapore (NUS)",
+      "country": "Singapore",
+      "selectivity_tier": "Selective",
+      "strong_areas": ["Engineering", "Computing", "Business", "Sciences"],
+      "general_guidance": "A leading Asian university; competitive admissions weigh academics heavily. Requirements differ by program and applicant region."
+    },
+    {
+      "name": "University of Toronto",
+      "country": "Canada",
+      "selectivity_tier": "Selective",
+      "strong_areas": ["Computer Science", "Life Sciences", "Business", "Engineering"],
+      "general_guidance": "Strong, large research university. Admission is program-specific and grades-focused; some programs (e.g., CS) are much more competitive than others."
+    },
+    {
+      "name": "Arizona State University",
+      "country": "USA",
+      "selectivity_tier": "Accessible (broad access)",
+      "strong_areas": ["Engineering", "Business", "Wide range of programs"],
+      "general_guidance": "Large public university with broad access and many programs. Often a realistic match/safety option for solid students; honors college available for high achievers."
+    }
+  ]
+}
