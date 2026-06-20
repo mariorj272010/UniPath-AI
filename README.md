@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# UniPath AI
 
-## Getting Started
+UniPath AI reads a student's resume/transcript PDF and produces an honest **university-readiness
+report**. The intelligence runs on a **local Llama 3.1 model via [Ollama](https://ollama.com)** —
+**no cloud, no API key, no cost.** After the first download it works fully offline.
 
-First, run the development server:
+## What's in this repo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+| Folder | What it is | Needs |
+|--------|------------|-------|
+| **`Hackathon/unipath-ai/`** | The main **Next.js** web app (cinematic UI) | **Node.js + Ollama** |
+| `Hackathon/` (`app.py`, `run.bat`) | Older **Streamlit** version, same job in Python | Python + Ollama |
+| repo root (`app/`, `components/`) | MICRORITM marketing site (Next.js) | Node.js |
+
+The quick start below sets up the **main app** (`Hackathon/unipath-ai`) on a **fresh Windows
+laptop with nothing installed** — everything from the terminal.
+
+---
+
+## Quick start (Windows, from a clean laptop)
+
+Open **PowerShell** (Start → type `PowerShell`) and run these in order. You only do this once.
+You need internet for the first run; after that it's offline.
+
+**1. Install Node.js**
+```powershell
+winget install --id OpenJS.NodeJS.LTS -e --accept-package-agreements --accept-source-agreements
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**2. Install Ollama**
+```powershell
+winget install --id Ollama.Ollama -e --accept-package-agreements --accept-source-agreements
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> **Now close PowerShell and open a new window** so it picks up the `node`, `npm`, and `ollama`
+> commands. Verify: `node --version`, `npm --version`, `ollama --version`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**3. Start the Ollama server** (leave this window open)
+```powershell
+ollama serve
+```
 
-## Learn More
+**4. In a second window, download the AI model** (~4.9 GB, one time)
+```powershell
+ollama pull llama3.1:8b
+```
 
-To learn more about Next.js, take a look at the following resources:
+**5. Build the CPU-only model** (avoids GPU-driver crashes on random laptops)
+```powershell
+cd Hackathon\unipath-ai
+ollama create unipath-cpu -f ..\Modelfile
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**6. Install the app and run it**
+```powershell
+npm install
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Open **http://localhost:3000**. The first analysis takes **1–3 minutes** (a real AI model
+running on your CPU) — the loading screen is supposed to sit a while.
 
-## Deploy on Vercel
+➡️ **Full step-by-step guide with explanations and troubleshooting:**
+[`Hackathon/unipath-ai/README.md`](Hackathon/unipath-ai/README.md)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Requirements
+
+- **Windows 10/11** with `winget` (preinstalled on current Windows).
+- **~8 GB free disk space**, ideally **8 GB+ RAM**.
+- Internet for the **first** run only.
+
+> **macOS / Linux?** Same idea — install Node from [nodejs.org](https://nodejs.org) and Ollama
+> from [ollama.com/download](https://ollama.com/download), then run steps 3–6 with `/` paths.
+> See [`Hackathon/unipath-ai/README.md`](Hackathon/unipath-ai/README.md) for details.
+
+## Prefer the one-click Python version?
+
+The Streamlit app in `Hackathon/` installs everything itself: double-click
+**`Hackathon/run.bat`** — it auto-installs Python, Ollama, and the model via `winget`, then opens
+the app at http://localhost:8501.
