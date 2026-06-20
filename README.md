@@ -39,6 +39,7 @@ winget install --id Ollama.Ollama -e --accept-package-agreements --accept-source
 ```powershell
 ollama serve
 ```
+If there is tcp error when running "ollama serve", it means that ollama is already running and you can skip this part
 
 **4. In a second window, download the AI model** (~4.9 GB, one time)
 ```powershell
