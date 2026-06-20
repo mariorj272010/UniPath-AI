@@ -75,8 +75,5 @@ running on your CPU) — the loading screen is supposed to sit a while.
 > from [ollama.com/download](https://ollama.com/download), then run steps 3–6 with `/` paths.
 > See [`Hackathon/unipath-ai/README.md`](Hackathon/unipath-ai/README.md) for details.
 
-## Prefer the one-click Python version?
 
-The Streamlit app in `Hackathon/` installs everything itself: double-click
-**`Hackathon/run.bat`** — it auto-installs Python, Ollama, and the model via `winget`, then opens
-the app at http://localhost:8501.
+
