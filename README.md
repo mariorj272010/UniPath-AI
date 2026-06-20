@@ -39,7 +39,9 @@ winget install --id Ollama.Ollama -e --accept-package-agreements --accept-source
 ```powershell
 ollama serve
 ```
-If there is tcp error when running "ollama serve", it means that ollama is already running and you can skip this part
+> Tip: Installing Ollama also adds a desktop app that auto-starts the same server. If you
+> ever see `address already in use`, the server is already running — just skip `ollama serve`
+> and move on.
 
 **4. In a second window, download the AI model** (~4.9 GB, one time)
 ```powershell
