@@ -131,6 +131,7 @@ ollama create unipath-cpu -f ..\Modelfile
 
 > If you copied this project somewhere else, change the `cd` path above to wherever the
 > `unipath-ai` folder actually is on this laptop.
+> The path above is someone else's
 
 Confirm both models are present:
 
