@@ -57,7 +57,7 @@ npm install
 npm run dev
 ```
 
-Open **http://localhost:3000**. The first analysis takes **1–3 minutes** (a real AI model
+Open **http://localhost:3000**. The first analysis takes **7-8 minutes** (a real AI model
 running on your CPU) — the loading screen is supposed to sit a while.
 
 ➡️ **Full step-by-step guide with explanations and troubleshooting:**
